@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7f05239e5adbe449df17d9e61a6e9e, type: 3}
+  m_Name: C18LevelData
+  m_EditorClassIdentifier: 
+  songName: C18H27NO3 molasses spill
+  songArtistName: Team Grimoire
+  levelCreatorName: Urki
+  beatsPerMinute: 210
+  songClip: {fileID: 8300000, guid: 6c1aae5847a857944b5eea1f50c6a6f5, type: 3}
+  mapData: {fileID: 11400000, guid: 94fe1eff40888e94689b64813dad54e9, type: 2}
