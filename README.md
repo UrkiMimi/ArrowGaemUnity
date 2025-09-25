@@ -7,5 +7,5 @@ This repository is a work-in-progress port of ArrowGaem to Unity 2021. The port 
 - 9/23/25: Animator logic.
 
 ## Credits
-(Easings.net)[https://github.com/ai/easings.net] for easing logic.
-(Penguinmod Team)[https://github.com/PenguinMod] for the engine used for the inital alpha.
+- [Easings.net](https://github.com/ai/easings.net) for easing logic.
+- [PenguinMod Team](https://github.com/PenguinMod) for the engine used for the inital alpha.
