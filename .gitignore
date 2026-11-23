@@ -80,3 +80,8 @@ crashlytics-build.properties
 /Assets/CurveMaster.meta
 /Assets/AmplifyShaderEditor/*
 /Assets/AmplifyShaderEditor.meta
+
+# hi i love macos 
+.DS_Store
+._*
+.vscode/*
