@@ -5948,7 +5948,7 @@ MonoBehaviour:
   _audioSync: {fileID: 984792794}
   _scoreC: {fileID: 279731676}
   _noteOffset: 0.65
-  latency: -250
+  latency: 50
   fixedTime: 0
   animTime: 0
   _levelData: {fileID: 11400000, guid: f8637ae8b0a246b4ca5c925373d24e0c, type: 2}

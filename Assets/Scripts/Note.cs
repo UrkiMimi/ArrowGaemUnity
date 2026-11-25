@@ -17,11 +17,11 @@ public class Note : MonoBehaviour
 
     private float start; // for subtracted time
 
-    private float noteSize = 0.42f; // fixed note size for note placement
+    private float noteSize = 0.3f; // fixed note size for note placement
 
     private Vector3 position;
 
-    private Vector2 laneOffsetParams; // handles rotation and position for notes
+    private float laneOffsetParams; // handles rotation and position for notes
 
     private string noteLane; // sets the proper note key for input
 
@@ -37,10 +37,9 @@ public class Note : MonoBehaviour
         // calculate note placement
         laneToTransform(lane);
         Vector3 rotation = transform.localRotation.eulerAngles;
-        rotation.z = laneOffsetParams.y;
         // lots of issues arose with this when using this with the animator controller
         // so i have to set them which is fucking cringe
-        position = new Vector3(laneOffsetParams.x, -1000, 0); 
+        position = new Vector3(laneOffsetParams, -1000, 0); 
 
         // set rotation
         // local cause animator fucking sucks
@@ -62,7 +61,7 @@ public class Note : MonoBehaviour
             realLifeTime =  (subtractedTime / (_levelController._levelData.beatsPerMinute / 60) / (_levelController._noteOffset));
 
             // lerp y position
-            position.y = Mathf.Lerp(-2.6f, 2.8f, subtractedTime / (lifeTime * 1.5f));
+            position.y = Mathf.Lerp(1.95f, -1.95f, subtractedTime / (lifeTime * 1.0f));
             transform.localPosition = position;
         }
     }
@@ -80,13 +79,18 @@ public class Note : MonoBehaviour
             
             // hit detection
             // TODO: add scoring
-            if (realLifeTime > 0.85f && realLifeTime < 1.1f)
+            if (realLifeTime > 0.9f && realLifeTime < 1.1f)
             {
                 if (Input.GetButtonDown(noteLane))
                 {
                     _levelController._scoreC.Increment();
                     Destroy(this.gameObject);
                 }
+                _spriteRenderer.color = new Color(1,1,1,1);
+            }
+            else
+            {
+                _spriteRenderer.color = new Color(1,0,0,0.5f);
             }
         }
     }
@@ -97,19 +101,19 @@ public class Note : MonoBehaviour
         switch (lane)
         {
             case 0:
-                laneOffsetParams = new Vector2(noteSize * -3f, 90f);
+                laneOffsetParams = noteSize * -3f;
                 noteLane = "Left";
                 break;
             case 1:
-                laneOffsetParams = new Vector2(-noteSize, 180f);
+                laneOffsetParams = -noteSize;
                 noteLane = "Down";
                 break;
             case 2:
-                laneOffsetParams = new Vector2(noteSize, 0f);
+                laneOffsetParams = noteSize;
                 noteLane = "Up";
                 break;
             case 3:
-                laneOffsetParams = new Vector2(noteSize * 3f, -90f);
+                laneOffsetParams = noteSize * 3f;
                 noteLane = "Right";
                 break;
         }
